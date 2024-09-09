@@ -1,7 +1,7 @@
 ---
 - name: Read backed-up configuration file
   ansible.builtin.slurp:
-    src: "{{ network_restore_backup_path }}"
+    src: "{{ network_restore_backup_path }}/{{ inventory_hostname }}.txt"
   register: backedup_config
 
 - name: Apply backed-up configuration
